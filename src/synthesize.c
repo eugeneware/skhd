@@ -79,10 +79,10 @@ void synthesize_text(char *text)
     {
         c = CFStringGetCharacterAtIndex(text_ref, i);
         CGEventKeyboardSetUnicodeString(de, 1, &c);
-        CGEventPost(kCGAnnotatedSessionEventTap, de);
+        CGEventPost(kCGSessionEventTap, de);
         usleep(1000);
         CGEventKeyboardSetUnicodeString(ue, 1, &c);
-        CGEventPost(kCGAnnotatedSessionEventTap, ue);
+        CGEventPost(kCGSessionEventTap, ue);
     }
 
     CFRelease(ue);
